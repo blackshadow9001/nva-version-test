@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Home · NVA Pet Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <a class="brand" href="home.html">
+        <span class="brand-mark"><i data-icon="paw-print" data-size="18"></i></span>
+        <span class="brand-name">NVA Pet Care</span>
+      </a>
+      <span class="header-actions">
+        <button type="button" class="btn btn--ghost btn--icon" aria-label="Notifications" data-toast="No new notifications.">
+          <i data-icon="bell" data-size="18"></i>
+        </button>
+        <a class="btn btn--ghost btn--icon" aria-label="Sign out" href="index.html?entry=returning" id="sign-out">
+          <i data-icon="log-out" data-size="18"></i>
+        </a>
+      </span>
+    </header>
+
+    <main class="app-main app-main--home">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <h1 class="h3"><span id="greeting">Good morning</span>, Lucy</h1>
+          <p class="muted text-sm" style="margin:0">Here's what's coming up for Waffles.</p>
+        </div>
+        <span class="badge badge--secondary"><i data-icon="sparkles" data-size="12"></i>Member</span>
+      </div>
+
+      <a class="card" href="#pets" data-toast="Waffles' profile isn't part of this prototype yet.">
+        <div class="card-content pet-row">
+          <div class="pet-photo" role="img" aria-label="Photo: Waffles"><i data-icon="dog" data-size="22"></i>Photo</div>
+          <div class="pet-meta">
+            <span class="pet-name">Waffles</span>
+            <span class="pet-sub">Golden retriever · 4 years · Adult</span>
+          </div>
+          <i data-icon="chevron-right" data-size="18"></i>
+        </div>
+      </a>
+
+      <section class="card" aria-labelledby="visit-title">
+        <div class="card-header">
+          <h2 class="card-title" id="visit-title">Next visit</h2>
+          <p class="card-description">Annual check-up with Dr. Patel</p>
+          <div class="card-action"><span class="badge badge--outline">Booked</span></div>
+        </div>
+        <div class="card-content meta-list">
+          <span><i data-icon="calendar" data-size="18"></i><time id="visit-time" datetime="2026-11-12T09:30">Thu, Nov 12 · 9:30 AM</time></span>
+          <span><i data-icon="map-pin" data-size="18"></i>Vaughan Animal Hospital</span>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn--outline btn--sm" data-toast="Rescheduling isn't part of this prototype yet.">Reschedule</button>
+          <button type="button" class="btn btn--ghost btn--sm" id="add-to-calendar">Add to calendar</button>
+        </div>
+      </section>
+
+      <div class="alert" role="status">
+        <i data-icon="syringe" data-size="18"></i>
+        <p class="alert-title">Rabies booster due in 2 weeks</p>
+        <p class="alert-description">Book it with the check-up to save a trip.</p>
+      </div>
+    </main>
+
+    <nav class="tabbar" aria-label="App">
+      <a href="#home" aria-current="page"><i data-icon="house" data-size="22"></i>Home</a>
+      <a href="#pets"><i data-icon="paw-print" data-size="22"></i>Pets</a>
+      <a href="#visits"><i data-icon="calendar" data-size="22"></i>Visits</a>
+      <a href="#account"><i data-icon="user" data-size="22"></i>Account</a>
+    </nav>
+  </div>
+
+  <div class="toast-region" aria-live="polite"></div>
+
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

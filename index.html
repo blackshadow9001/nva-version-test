@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sign in · NVA Pet Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><i data-icon="paw-print" data-size="18"></i></span>
+        <span class="brand-name">NVA Pet Care</span>
+      </a>
+      <span style="width:44px;height:44px" aria-hidden="true"></span>
+    </header>
+
+    <main class="app-main">
+      <!-- Returning user heading -->
+      <div data-show="returning" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+        <div class="avatar" aria-hidden="true">LM</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <h1 class="h3">Welcome back, Lucy</h1>
+          <p class="muted text-sm" style="margin:0">Sign in to see Waffles' visits and reminders.</p>
+        </div>
+      </div>
+
+      <!-- New user heading -->
+      <div data-show="new" style="display:flex;flex-direction:column;gap:4px">
+        <h1 class="h3">Sign in to NVA Pet Care</h1>
+        <p class="muted text-sm" style="margin:0">Your pets' care records, visits and reminders in one place.</p>
+      </div>
+
+      <form id="signin-form" novalidate style="display:flex;flex-direction:column;gap:24px">
+        <div id="form-alert" class="form-alert" role="alert" hidden></div>
+
+        <div class="field-group">
+          <!-- Returning: email is remembered -->
+          <div class="field" data-show="returning">
+            <span class="label" id="email-r-label">Email</span>
+            <div class="readonly-email" aria-labelledby="email-r-label">
+              <span id="email-r">lucy@example.com</span>
+              <button type="button" class="btn btn--link btn--sm" id="not-you">Not you?</button>
+            </div>
+          </div>
+
+          <!-- New: email input -->
+          <div class="field" data-show="new">
+            <label class="label" for="email">Email</label>
+            <input class="input" id="email" name="email" type="email" placeholder="name@example.com"
+                   autocomplete="email" inputmode="email" aria-describedby="email-error">
+            <p class="field-error" id="email-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <div class="field-row">
+              <label class="label" for="password">Password</label>
+              <a href="#forgot" class="link-muted" data-toast="We'll email you a link to reset your password.">Forgot password?</a>
+            </div>
+            <div class="input-wrap">
+              <input class="input" id="password" name="password" type="password" placeholder="Your password"
+                     autocomplete="current-password" aria-describedby="password-error">
+              <button type="button" class="reveal" id="reveal" aria-label="Show password" aria-pressed="false">
+                <i data-icon="eye" data-size="16"></i>
+              </button>
+            </div>
+            <p class="field-error" id="password-error" hidden></p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <button type="submit" class="btn btn--primary btn--lg btn--block" id="submit">Sign in</button>
+          <div class="separator" role="presentation"><span>or</span></div>
+          <button type="button" class="btn btn--outline btn--lg btn--block" data-sso="Apple">Continue with Apple</button>
+          <button type="button" class="btn btn--outline btn--lg btn--block" data-sso="Google">Continue with Google</button>
+        </div>
+      </form>
+
+      <p class="muted text-sm" style="margin:auto 0 0;text-align:center">
+        New here? <a href="#create-account" class="link-strong" data-toast="Account creation isn't part of this prototype yet.">Create an account</a>
+      </p>
+    </main>
+  </div>
+
+  <div class="toast-region" aria-live="polite"></div>
+
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
